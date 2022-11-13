@@ -9,6 +9,7 @@ namespace EfCoreMovies.Entities.Configurations
         public void Configure(EntityTypeBuilder<Actor> builder)
         {
             builder.Property(p => p.Name).IsRequired();
+            builder.Property(p => p.Biography).IsRequired(false).HasMaxLength(5000);
             builder.Property(p => p.DateOfBirth).IsRequired();
         }
     }
